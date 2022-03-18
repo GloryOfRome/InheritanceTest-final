@@ -15,6 +15,12 @@ namespace InheritanceTest_final.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Comment>().HasDiscriminator<string>("Type")
+                .HasValue<Comment>("C")//HasValue返回的结果是bool类型
+                .HasValue<Answer>("A");
+        }
         public DbSet<InheritanceTest_final.Models.Question> Question { get; set; }
         public DbSet<Answer> Answer { get; set; }
         public DbSet<Comment> Comment { get; set; }
