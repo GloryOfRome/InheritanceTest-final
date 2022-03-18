@@ -1,4 +1,10 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using InheritanceTest_final.Data;
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<InheritanceTest_finalContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("InheritanceTest_finalContext")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
