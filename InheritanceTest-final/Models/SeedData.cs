@@ -49,6 +49,8 @@ namespace InheritanceTest_final
 
 
             context.SaveChanges();//将改变保持
+
+            List<Comment> comments = context.Comment.ToList();
         }
     }
 }
