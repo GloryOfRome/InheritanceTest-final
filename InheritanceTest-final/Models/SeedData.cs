@@ -38,6 +38,15 @@ namespace InheritanceTest_final
             newQuestion.Comments.Add(newAnswer);
             context.Answer.Add(newAnswer);
 
+            Review newReview = new Review
+            {
+                Body = "这个问题太糟糕",
+                Question = newQuestion,
+                Score = 2
+            };
+            newQuestion.Comments.Add(newReview);
+            context.Review.Add(newReview);
+
 
             context.SaveChanges();//将改变保持
         }
