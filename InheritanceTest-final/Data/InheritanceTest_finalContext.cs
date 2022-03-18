@@ -16,5 +16,7 @@ namespace InheritanceTest_final.Data
         }
 
         public DbSet<InheritanceTest_final.Models.Question> Question { get; set; }
+        public DbSet<Answer> Answer { get; set; }
+        public DbSet<Comment> Comment { get; set; }
     }
 }
