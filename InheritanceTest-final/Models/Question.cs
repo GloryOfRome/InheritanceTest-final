@@ -6,6 +6,5 @@
         public string Title { get; set; }
         public string Body { get; set; }
         public ICollection<Comment> Comments { get; set; }//1对多
-
     }
 }
